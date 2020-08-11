@@ -1,0 +1,46 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.shape {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.outline {
+    border: 2px solid var(--main-color);
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.smallItem {
+    width: 40px;
+    height: 40px;
+}
+
+.heap {
+    display: grid;
+    grid-template-areas: 
+        '. top top .'
+        'bot1 bot1 bot2 bot2';
+}
+
+.top {
+    grid-area: top;
+}
+
+.bottom1 {
+    grid-area: bot1;
+}
+
+.bottom2 {
+    grid-area: bot2;
+}

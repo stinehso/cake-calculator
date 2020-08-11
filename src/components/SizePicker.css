@@ -1,0 +1,18 @@
+.setSize {
+    display: inline-block;
+    margin: 0 30px;
+    width: 30px;
+}
+
+.sizeInput {
+    display: flex;
+    flex-direction: row;
+}
+
+label {
+    text-align: right;
+}
+
+input {
+    width: 10px;
+}
