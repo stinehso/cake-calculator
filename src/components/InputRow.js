@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import TextField from '@material-ui/core/TextField'
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
@@ -22,8 +22,14 @@ function InputRow({id, amount, item, calculate, onInputChange, multiplier}) {
     id === 0 ? amountLabel = 'Mengde' : amountLabel = ''
     id === 0 ? itemLabel = 'Enhet og ingrediens' : itemLabel = ''
 
+    const formatNumber = (number) => {
+      return new Intl.NumberFormat('en-IN', { 
+        maximumFractionDigits: 2
+      }).format(number)
+    }
+
     return (
-        <div>
+        <Fragment>
             <TextField
                     id={`quantity${id}`}
                     label={amountLabel}
@@ -52,9 +58,9 @@ function InputRow({id, amount, item, calculate, onInputChange, multiplier}) {
                     <ArrowForwardIcon />
             </IconButton>
             <Typography variant="body1" display='inline'>
-                {`${amount*multiplier} ${item}`}
+                {`${formatNumber(amount*multiplier)} ${item}`}
             </Typography>
-        </div>
+        </Fragment>
     )
 }
 

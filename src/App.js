@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from 'react'
+import Button from '@material-ui/core/Button';
 import Navbar from './components/Navbar'
 import Formvalg from './components/Formvalg'
 import SizePicker from './components/SizePicker'
 import ShowResult from './components/ShowResult'
-import BackButton from './components/BackButton'
+import Bottombar from './components/Bottombar'
 import VolumeTable from './components/VolumeTable'
+import CalculateButton from './components/CalculateButton'
 import './App.css';
 
 
@@ -12,13 +14,13 @@ export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      route: 'home', // home/ secondShape/ secondNumber/ setSize/ result/ volumeTable
+      route: 'result', // home/ secondShape/ secondNumber/ setSize/ result/ volumeTable
       shapes: 'all',  // all/ circleSquare/ heap
       orig: '',   // possible: circle/ square/ number
       new: '',
       sizes: {
-        firstArea: 0,
-        secondArea: 0
+        firstArea: 2,
+        secondArea: 1
       }
     }
   }
@@ -54,7 +56,7 @@ export default class App extends Component {
       } else {
         this.setState({shapes: 'heap'})
         this.setState({new: 'number'})
-        setTimeout(() => this.setState({ route: 'setSize'}), 3000)
+        setTimeout(() => this.setState({ route: 'setSize'}), 1000)
       }
     } else if (this.state.route.includes('second')){
         this.setState({ route: 'setSize'})
@@ -95,7 +97,8 @@ export default class App extends Component {
     return (
       <div className="App">
         <Navbar home={event => this.setInitialState()}
-          volumes={event => {this.toVolumeTable()}} />
+          volumes={event => {this.toVolumeTable()}}
+          route={route} back={this.onRouteChange} />
         <div className='mainArea'>
           {route === 'home' || route === 'secondShape'
           ? <Fragment>
@@ -115,11 +118,8 @@ export default class App extends Component {
                   setArea={(area) => this.setArea('secondArea', area)} 
                   num={2}
               />
-              <button type='submit' 
-                  onClick={this.onSubmitSize}
-              >
-                Beregn
-              </button>
+              <CalculateButton
+                  onSubmitSize={this.onSubmitSize} />
             </Fragment>
           : route === 'result'
             ? <ShowResult 
@@ -128,7 +128,7 @@ export default class App extends Component {
           : // route === 'volumeTable'
             <VolumeTable />
           }
-          <BackButton route={route} back={this.onRouteChange} />
+          <Bottombar route={route} back={this.onRouteChange} />
         </div>
       </div>
     )

@@ -33,6 +33,8 @@ export default function SpacingGrid() {
     <Grid container className={classes.root} spacing={6}>
         <Grid container xs={12} justify="center" spacing={6}>
             <Grid item xs={12}/>
+      <h2>Volumtabell</h2>
+
             <Grid item xs={12}/>
           {
           [1, 1/2, 1/3, 1/4].map((value) => (

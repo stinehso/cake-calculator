@@ -3,6 +3,9 @@ import InputRow from './InputRow'
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
+import './ShowResult.css'
+
+
 
 export default class ShowResult extends Component {
     constructor({ multiplicator }) {
@@ -54,22 +57,23 @@ export default class ShowResult extends Component {
             <Typography variant="subtitle2">
                 Sett inn:
             </Typography>
-
-            {
-                this.state.ingredients.map((item, i) => {
-                    return (
-                        <InputRow 
-                            id={item.key} 
-                            amount={item.amount}
-                            item={item.value} 
-                            calculate={this.calculateHowMuch}
-                            onInputChange={this.onInputChange}
-                            multiplier={result} /> 
-                    )
-                })
-            }
-
+            <div className='container'>
+                {
+                    this.state.ingredients.map((item, i) => {
+                        return (
+                            <InputRow 
+                                id={item.key} 
+                                amount={item.amount}
+                                item={item.value} 
+                                calculate={this.calculateHowMuch}
+                                onInputChange={this.onInputChange}
+                                multiplier={result} /> 
+                        )
+                    })
+                }
+            </div>
             <IconButton edge="start" color="inherit" aria-label="add-item"
+                      classes='addButton'
                       onClick={e => this.addNewLine()}>
                 <AddIcon />
             </IconButton>

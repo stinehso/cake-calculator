@@ -1,0 +1,10 @@
+.container {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 4fr;
+    height: 50vh;
+}
+
+.addButton {
+    margin-top: 24px;
+    z-index: 1;
+}
