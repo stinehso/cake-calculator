@@ -12,6 +12,10 @@
     margin-right: 16px;
 }
 
+.row > svg {
+    place-self: center;
+}
+
 .row > p {
     display: table-cell;
     text-align: left;

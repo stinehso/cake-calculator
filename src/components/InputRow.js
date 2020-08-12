@@ -10,9 +10,9 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(1),
     },
-  numberInput: {
-    width: '10px',
-  },
+    numberInput: {
+      width: '10px',
+    },
   },
 }));
 
@@ -52,11 +52,7 @@ function InputRow({id, amount, item, calculate, onInputChange, multiplier}) {
                     }}
                     onChange={e => onInputChange(e.target.value, id, 'text')}
             />
-            <IconButton className={classes.arrow} id={id} color="inherit"      
-                aria-label="calculate"
-                onClick={(e) => calculate(id)}>
-                    <ArrowForwardIcon />
-            </IconButton>
+            <ArrowForwardIcon />
             <Typography variant="body1" display='inline'>
                 {`${formatNumber(amount*multiplier)} ${item}`}
             </Typography>
