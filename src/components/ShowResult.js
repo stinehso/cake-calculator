@@ -57,7 +57,7 @@ export default class ShowResult extends Component {
             <Typography variant="subtitle2">
                 Sett inn:
             </Typography>
-            <div className='container'>
+            <div className='listContainer'>
                 {
                     this.state.ingredients.map((item, i) => {
                         return (
@@ -72,7 +72,7 @@ export default class ShowResult extends Component {
                     })
                 }
             </div>
-            <IconButton edge="start" color="inherit" aria-label="add-item"
+            <IconButton color="inherit" aria-label="add-item"
                       classes='addButton'
                       onClick={e => this.addNewLine()}>
                 <AddIcon />

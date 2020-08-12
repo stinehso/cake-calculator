@@ -29,7 +29,7 @@ function InputRow({id, amount, item, calculate, onInputChange, multiplier}) {
     }
 
     return (
-        <Fragment>
+        <div className='row'>
             <TextField
                     id={`quantity${id}`}
                     label={amountLabel}
@@ -60,7 +60,7 @@ function InputRow({id, amount, item, calculate, onInputChange, multiplier}) {
             <Typography variant="body1" display='inline'>
                 {`${formatNumber(amount*multiplier)} ${item}`}
             </Typography>
-        </Fragment>
+        </div>
     )
 }
 
