@@ -14,13 +14,13 @@ export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      route: 'result', // home/ secondShape/ secondNumber/ setSize/ result/ volumeTable
+      route: 'home', // home/ secondShape/ secondNumber/ setSize/ result/ volumeTable
       shapes: 'all',  // all/ circleSquare/ heap
       orig: '',   // possible: circle/ square/ number
       new: '',
       sizes: {
-        firstArea: 2,
-        secondArea: 1
+        firstArea: 0,
+        secondArea: 0
       }
     }
   }
