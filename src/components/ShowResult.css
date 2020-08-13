@@ -7,7 +7,7 @@
 
 .row {
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr 4fr;
+    grid-template-columns: 2fr 4fr 1fr 4fr;
     column-gap: 16px;
     margin-right: 16px;
 }
